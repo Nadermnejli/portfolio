@@ -1,0 +1,40 @@
+<section id="education" class="education">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Education</h2>
+      <p class="section-subtitle">My academic journey and qualifications</p>
+    </div>
+    
+    <div class="education-timeline">
+      <div class="education-item" *ngFor="let edu of education; let i = index">
+        <div class="education-marker">
+          <div class="education-dot"></div>
+        </div>
+        <div class="education-content" [class.left]="i % 2 === 0" [class.right]="i % 2 === 1">
+          <div class="education-card">
+            <div class="education-header">
+              <h3>{{ edu.degree }}</h3>
+              <div class="institution">
+                <h4>{{ edu.institution }}</h4>
+                <span class="location">{{ edu.location }}</span>
+              </div>
+              <div class="duration">{{ edu.duration }}</div>
+            </div>
+            <div class="education-body">
+              <p class="description">{{ edu.description }}</p>
+              <div class="specialization" *ngIf="edu.specialization">
+                <strong>Specialization:</strong> {{ edu.specialization }}
+              </div>
+              <div class="achievements" *ngIf="edu.achievements && edu.achievements.length > 0">
+                <h5>Key Achievements:</h5>
+                <ul>
+                  <li *ngFor="let achievement of edu.achievements">{{ achievement }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

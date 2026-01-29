@@ -1,0 +1,39 @@
+<section id="skills" class="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <p class="section-subtitle">Technologies I work with and love</p>
+    </div>
+    
+    <div class="skills-content">
+      <div class="skill-category" *ngFor="let category of skillCategories">
+        <h3 class="category-title">{{ category.title }}</h3>
+        <div class="skills-grid">
+          <div class="skill-item" *ngFor="let skill of category.skills">
+            <div class="skill-icon">
+              <i [class]="skill.icon"></i>
+            </div>
+            <div class="skill-info">
+              <h4>{{ skill.name }}</h4>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" [style.width.%]="skill.level"></div>
+                </div>
+                <span class="skill-percentage">{{ skill.level }}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="methodologies">
+      <h3>Methodologies & Practices</h3>
+      <div class="methodology-tags">
+        <span class="methodology-tag" *ngFor="let methodology of methodologies">
+          {{ methodology }}
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

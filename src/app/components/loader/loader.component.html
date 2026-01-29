@@ -1,0 +1,61 @@
+<div class="loader-overlay" *ngIf="isLoading">
+  <div class="loader-container">
+    <!-- Animated Background -->
+    <div class="loader-bg">
+      <div class="floating-particles">
+        <div class="particle" *ngFor="let particle of particles; let i = index" 
+             [style.left.%]="particle.x" 
+             [style.top.%]="particle.y"
+             [style.animation-delay.s]="particle.delay">
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Loader Content -->
+    <div class="loader-content">
+      <!-- Profile Image with Animation -->
+      <div class="profile-loader">
+        <div class="profile-ring">
+          <div class="profile-ring-inner"></div>
+        </div>
+        <div class="profile-image">
+          <img src="nader.png" alt="Nader Mnejli" />
+        </div>
+        <div class="pulse-ring"></div>
+      </div>
+
+      <!-- Loading Text -->
+      <div class="loading-text">
+        <h2>{{ loadingTexts[currentTextIndex] }}</h2>
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="loadingProgress"></div>
+        </div>
+        <div class="progress-text">{{ loadingProgress }}%</div>
+      </div>
+
+      <!-- Tech Stack Icons -->
+      <div class="tech-icons">
+        <div class="tech-icon" *ngFor="let tech of techStack; let i = index" 
+             [style.animation-delay.s]="i * 0.2">
+          <i [class]="tech.icon"></i>
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Quote -->
+    <div class="loading-quote">
+      <p>"{{ currentQuote }}"</p>
+      <span>- Nader Mnejli</span>
+    </div>
+  </div>
+</div>

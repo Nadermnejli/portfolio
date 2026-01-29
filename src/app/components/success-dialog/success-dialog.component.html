@@ -1,0 +1,45 @@
+<div class="dialog-overlay" (click)="closeDialog()">
+  <div class="dialog-container" (click)="$event.stopPropagation()">
+    <div class="dialog-header">
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Message Sent Successfully!</h2>
+      <button class="close-btn" (click)="closeDialog()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="dialog-body">
+      <p class="success-message">
+        🎉 Thank you for reaching out! Your message has been delivered successfully.
+      </p>
+      <p class="follow-up">
+        I'll get back to you as soon as possible. In the meantime, feel free to:
+      </p>
+      
+      <div class="action-buttons">
+        <a href="https://linkedin.com/in/nader-mnejli" target="_blank" class="action-btn linkedin">
+          <i class="fab fa-linkedin"></i>
+          Connect on LinkedIn
+        </a>
+        <a href="https://github.com/nadermnejli" target="_blank" class="action-btn github">
+          <i class="fab fa-github"></i>
+          Check out my GitHub
+        </a>
+      </div>
+      
+      <div class="response-time">
+        <i class="fas fa-clock"></i>
+        <span>Typical response time: 24-48 hours</span>
+      </div>
+    </div>
+    
+    <div class="dialog-footer">
+      <button class="primary-btn" (click)="closeDialog()">
+        <i class="fas fa-thumbs-up"></i>
+        Awesome, Thanks!
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="#home">Nader Mnejli</a>
+    </div>
+    <ul class="nav-menu" [class.active]="isMenuOpen">
+      <li class="nav-item">
+        <a href="#home" class="nav-link" (click)="closeMenu()">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link" (click)="closeMenu()">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#experience" class="nav-link" (click)="closeMenu()">Experience</a>
+      </li>
+      <li class="nav-item">
+        <a href="#skills" class="nav-link" (click)="closeMenu()">Skills</a>
+      </li>
+      <li class="nav-item">
+        <a href="#projects" class="nav-link" (click)="closeMenu()">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="#education" class="nav-link" (click)="closeMenu()">Education</a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link" (click)="closeMenu()">Contact</a>
+      </li>
+    </ul>
+    <div class="nav-toggle" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>
