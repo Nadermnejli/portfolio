@@ -4,11 +4,53 @@
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">Some of my recent work and accomplishments</p>
     </div>
-    
+
+    <!-- Featured / Flagship project -->
+    <div class="featured-project" *ngFor="let project of projects | slice:0:1">
+      <div class="featured-badge">{{ project.badge }}</div>
+      <div class="featured-inner">
+        <div class="featured-image-side">
+          <div class="featured-glow-ring"></div>
+          <div class="featured-img-wrapper">
+            <img src="nutreeto.png" alt="Nutreeto" class="featured-logo-img" />
+          </div>
+          <div class="featured-tech-pills">
+            <span class="tech-pill" *ngFor="let tech of project.technologies">{{ tech }}</span>
+          </div>
+        </div>
+        <div class="featured-content">
+          <div class="featured-meta">
+            <span class="featured-type">{{ project.type }}</span>
+            <span class="featured-date">{{ project.date }} · {{ project.duration }}</span>
+          </div>
+          <h3 class="featured-title">{{ project.title }}</h3>
+          <p class="featured-tagline">{{ project.tagline }}</p>
+          <p class="featured-description">{{ project.description }}</p>
+          <div class="featured-features">
+            <h4>Core Capabilities</h4>
+            <ul>
+              <li *ngFor="let feature of project.features">
+                <span class="feature-icon">✦</span>{{ feature }}
+              </li>
+            </ul>
+          </div>
+          <div class="featured-actions">
+            <a [href]="project.liveUrl" target="_blank" class="btn-primary" *ngIf="project.liveUrl">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a [href]="project.githubUrl" target="_blank" class="btn-secondary" *ngIf="project.githubUrl">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regular project grid -->
     <div class="projects-grid">
-      <div class="project-card" *ngFor="let project of projects">
+      <div class="project-card" *ngFor="let project of projects | slice:1">
         <div class="project-image">
-          <img [src]="project.image" [alt]="project.title" 
+          <img [src]="project.image" [alt]="project.title"
                (error)="onImageError($event, project)"
                (load)="onImageLoad($event, project)" />
           <div class="image-fallback" *ngIf="project.imageError">

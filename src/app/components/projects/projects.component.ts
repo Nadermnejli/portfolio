@@ -13,6 +13,9 @@ interface Project {
   date: string;
   duration: string;
   imageError?: boolean;
+  featured?: boolean;
+  tagline?: string;
+  badge?: string;
 }
 
 @Component({
@@ -24,6 +27,26 @@ interface Project {
 })
 export class ProjectsComponent {
   projects: Project[] = [
+    {
+      title: 'Nutreeto',
+      type: 'Digital Health Platform',
+      tagline: 'Redefining nutritional care through AI and real-time connectivity',
+      badge: '⭐ Flagship Project',
+      featured: true,
+      description: 'An integrated digital nutrition platform built for nutrition professionals and their patients. Nutreeto bridges the gap between clinical expertise and daily patient reality — combining AI-powered meal plan generation, real-time monitoring, OCR-based body composition analysis, and bidirectional messaging into one unified system.',
+      features: [
+        'AI-powered meal plan generation using large language models',
+        'Real-time patient monitoring & bidirectional messaging via WebSockets',
+        'OCR-based body composition analysis from scanned documents',
+        'Smart automated notifications and progress alerts',
+        'Reusable clinical template library for nutrition professionals',
+        'Secure patient portal with full health journey tracking'
+      ],
+      technologies: ['Angular', '.NET Core', 'AI / LLM', 'WebSockets', 'OCR', 'SQL Server', 'Clean Architecture', 'Docker'],
+      image: 'favicon.png',
+      date: '2025',
+      duration: '8 months'
+    },
     {
       title: 'MediAlerte',
       type: 'Healthcare Platform',

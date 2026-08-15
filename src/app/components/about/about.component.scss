@@ -204,3 +204,31 @@
     padding: 1.5rem;
   }
 }
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  background: transparent;
+  border: 1px solid #58a6ff;
+  color: #58a6ff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  i {
+    font-size: 1rem;
+    color: #f85149;
+  }
+
+  &:hover {
+    background: rgba(88, 166, 255, 0.1);
+    border-color: #79baff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(88, 166, 255, 0.2);
+  }
+}

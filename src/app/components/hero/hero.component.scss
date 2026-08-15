@@ -104,6 +104,21 @@
       transform: translateY(-2px);
     }
   }
+
+  &.btn-resume {
+    background: transparent;
+    color: #58a6ff;
+    border: 1px solid #58a6ff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background: rgba(88, 166, 255, 0.1);
+      border-color: #79baff;
+      transform: translateY(-2px);
+    }
+  }
 }
 
 .hero-social {
